@@ -1,3 +1,10 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-21 22:31:11
+ * @LastEditTime: 2019-08-21 23:27:42
+ * @LastEditors: Please set LastEditors
+ -->
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
@@ -89,6 +96,16 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  created(){
+    this.getList();
+  },
+  methods: {
+    getList(){
+      this.$http.get('/article/list').then(res => {
+        console.log(res)
+      })
     }
   }
 }
