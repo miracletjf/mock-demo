@@ -1,3 +1,10 @@
+<!--
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-21 22:31:11
+ * @LastEditTime: 2019-08-22 00:24:27
+ * @LastEditors: Please set LastEditors
+ -->
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
@@ -89,6 +96,25 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  created(){
+    this.getUserInfo();
+  },
+  methods: {
+    getUserInfo(){
+     //请求'/user/userinfo'接口
+      this.$http.get('/user/userinfo')
+      .then(({data})=>{
+        //打印mock data
+        console.log(data);
+        if(data.error === 0){
+          this.userInfo = data.data;
+        }else{
+          this.userInfo = {};
+        }
+        
+      });
     }
   }
 }

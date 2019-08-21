@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-21 22:31:11
+ * @LastEditTime: 2019-08-21 23:58:44
+ * @LastEditors: Please set LastEditors
+ */
 'use strict'
 const path = require('path')
 const utils = require('./utils')
@@ -40,7 +47,7 @@ module.exports = {
   },
   module: {
     rules: [
-      ...(config.dev.useEslint ? [createLintingRule()] : []),
+      // ...(config.dev.useEslint ? [createLintingRule()] : []),
       {
         test: /\.vue$/,
         loader: 'vue-loader',

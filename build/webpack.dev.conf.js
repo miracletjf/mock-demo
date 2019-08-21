@@ -1,3 +1,10 @@
+/*
+ * @Description: In User Settings Edit
+ * @Author: your name
+ * @Date: 2019-08-21 22:31:11
+ * @LastEditTime: 2019-08-22 00:19:03
+ * @LastEditors: Please set LastEditors
+ */
 'use strict'
 const utils = require('./utils')
 const webpack = require('webpack')
@@ -22,6 +29,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
 
   // these devServer options should be customized in /config/index.js
   devServer: {
+    before: require('../mock'),//引入mock/index.js
     clientLogLevel: 'warning',
     historyApiFallback: {
       rewrites: [
